@@ -51,6 +51,7 @@ dependencies {
     // Architecture components - ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-viewmodel:$androidxLifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata:$androidxLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$androidxLifecycleVersion"
     kapt "androidx.lifecycle:lifecycle-compiler:$androidxLifecycleVersion"
 
     // Networking: OkHttp
@@ -83,4 +84,3 @@ kapt {
     useBuildCache = true
     correctErrorTypes = true
 }
-
