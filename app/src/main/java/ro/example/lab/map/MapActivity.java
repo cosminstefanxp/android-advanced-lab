@@ -1,5 +1,7 @@
 package ro.example.lab.map;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.lifecycle.ViewModelProviders;
@@ -8,6 +10,7 @@ import ro.example.lab.core.BaseActivity;
 
 public class MapActivity extends BaseActivity {
 
+    private static final String ARG_COUNTRY_ID = "ARG_COUNTRY_ID";
     private MapViewModel viewModel;
 
     @Override
@@ -17,5 +20,11 @@ public class MapActivity extends BaseActivity {
 
         // Prepare the ViewModel
         viewModel = ViewModelProviders.of(this).get(MapViewModel.class);
+    }
+
+    public static void startActivity(Context context, int id) {
+        Intent intent = new Intent(context, MapActivity.class);
+        intent.putExtra(ARG_COUNTRY_ID, id);
+        context.startActivity(intent);
     }
 }
