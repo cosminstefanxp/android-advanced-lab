@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+      android:id="@+id/category_dashboard"
+      android:enabled="true"
+      android:title="@string/dashboard"
+      android:icon="@android:drawable/ic_dialog_dialer"
+      app:showAsAction="always"/>
+  <item
+      android:id="@+id/category_offers"
+      android:enabled="true"
+      android:title="@string/offers"
+      android:icon="@android:drawable/ic_dialog_info"
+      app:showAsAction="always"/>
+  <item
+      android:id="@+id/category_maps"
+      android:enabled="true"
+      android:title="@string/maps"
+      android:icon="@android:drawable/ic_dialog_map"
+      app:showAsAction="always"/>
+  <item
+      android:id="@+id/category_settings"
+      android:enabled="true"
+      android:title="@string/settings"
+      android:icon="@android:drawable/ic_menu_manage"
+      app:showAsAction="always"/>
+</menu>
