@@ -21,7 +21,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardItemViewHold
                      R.drawable.p6
     };
 
-    String[] nameList = {"One", "Two", "Three", "Four", "Five"};
+    String[] nameList = {"One", "Two", "Three", "Four", "Five", "Six"};
 
     @NonNull
     @Override
