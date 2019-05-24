@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "693114761887",
+    "firebase_url": "https://fsloyalty-20da2.firebaseio.com",
+    "project_id": "fsloyalty-20da2",
+    "storage_bucket": "fsloyalty-20da2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:693114761887:android:0d43e1fcc4fd6b45",
+        "android_client_info": {
+          "package_name": "ro.example.lab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "693114761887-g5sf2jjk2a329ka7gck6291d4ft32h95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYyvugtjpf5wAoxKymf-r46C0tEgjmhxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "693114761887-g5sf2jjk2a329ka7gck6291d4ft32h95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
