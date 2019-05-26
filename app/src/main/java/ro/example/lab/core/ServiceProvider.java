@@ -5,6 +5,7 @@ import android.app.Application;
 import ro.example.lab.data.Database;
 import ro.example.lab.data.NotesRepository;
 import ro.example.lab.data.ProfileRepository;
+import ro.example.lab.data.StationsRepository;
 import ro.example.lab.data.WebService;
 
 public class ServiceProvider {
@@ -15,6 +16,7 @@ public class ServiceProvider {
     private final WebService webService;
     private final ProfileRepository profileRepository;
     private final NotesRepository notesRepository;
+    private final StationsRepository stationsRepository;
     private final AuthenticationManager authenticationManager;
 
     private ServiceProvider(Application app) {
@@ -26,6 +28,7 @@ public class ServiceProvider {
         webService = new WebService(authenticationManager);
         profileRepository = null;
         notesRepository = new NotesRepository(webService, database);
+        stationsRepository = new StationsRepository();
     }
 
     public Database getDatabase() {
@@ -42,6 +45,10 @@ public class ServiceProvider {
 
     public NotesRepository getNotesRepository() {
         return notesRepository;
+    }
+
+    public StationsRepository getStationsRepository() {
+        return stationsRepository;
     }
 
     public static void initialize(Application app) {

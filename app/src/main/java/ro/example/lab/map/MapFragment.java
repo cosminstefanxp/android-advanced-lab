@@ -4,15 +4,16 @@ package ro.example.lab.map;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.List;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -29,12 +30,17 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.Locale;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import ro.example.lab.R;
+import ro.example.lab.data.Station;
 
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class MapFragment extends Fragment implements OnMapReadyCallback {
     private GoogleMap mMap;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION=8080;
@@ -42,6 +48,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     FusedLocationProviderClient mFusedLocationClient;
     private LocationRequest locationRequest;
     private LocationCallback locationCallback;
+    private TextView mTextViewStations;
+
+
+    private MapViewModel viewModel;
 
     public MapFragment() {
         // Required empty public constructor
@@ -49,11 +59,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_map, container, false);
-
+        mTextViewStations = rootView.findViewById(R.id.textView_stations);
         getLocationPermission();
 
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
@@ -117,6 +127,26 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             }
         }
         updateLocationUI();
+
+
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        configureViewModel();
+    }
+
+    private void configureViewModel() {
+        viewModel = ViewModelProviders.of(this).get(MapViewModel.class);
+        viewModel.init("RO");
+        viewModel.getCountryStations().observe(this, this::updateUIWithData);
+    }
+
+    private void updateUIWithData(List<Station> stations) {
+        if (stations != null) {
+            mTextViewStations.setText(String.valueOf(stations.size()));
+        }
     }
 
     @Override
