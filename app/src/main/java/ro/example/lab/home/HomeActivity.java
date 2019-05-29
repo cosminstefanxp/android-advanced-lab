@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.lifecycle.ViewModelProviders;
 import ro.example.lab.R;
 import ro.example.lab.core.BaseActivity;
-import ro.example.lab.map.MapActivity;
 import timber.log.Timber;
 
 public class HomeActivity extends BaseActivity {

@@ -3,4 +3,10 @@
 
   <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="station_title">Station title</string>
+  <string name="open_close">Open/Close</string>
+  <string name="estimated_time">Estimated Time</string>
+  <string name="station_address">Station Address</string>
+  <string name="station_opening_hours">Station Opening hours</string>
+  <string name="station_tel_nr">Station Tel Nr</string>
 </resources>

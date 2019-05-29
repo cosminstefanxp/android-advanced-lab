@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/bottom_sheet"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              app:behavior_hideable="true"
+              app:behavior_peekHeight="96dp"
+              app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="96dp"
+      android:background="@color/colorPrimary"
+      android:orientation="vertical"
+      android:padding="8dp"
+      >
+
+    <TextView
+        android:id="@+id/textView_peek_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_local_gas_station"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:text="@string/station_title"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView_peek_open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:gravity="center"
+        android:text="@string/open_close"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/textView_peek_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:gravity="center"
+        android:text="@string/estimated_time"
+        android:textColor="@android:color/white" />
+
+  </LinearLayout>
+
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:background="@android:color/white"
+      >
+
+    <TextView
+        android:id="@+id/textView_content_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:drawableLeft="@drawable/ic_location"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:text="@string/station_address"
+        android:textIsSelectable="true" />
+
+    <TextView
+        android:id="@+id/textView_content_open_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:drawableLeft="@drawable/ic_access_time"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:text="@string/station_opening_hours" />
+
+    <TextView
+        android:id="@+id/textView_content_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:drawableLeft="@drawable/ic_call"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:text="@string/station_tel_nr"
+        android:textIsSelectable="true" />
+
+  </LinearLayout>
+
+
+</LinearLayout>
