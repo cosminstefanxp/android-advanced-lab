@@ -3,4 +3,20 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/nav_graph"
-    />
+            app:startDestination="@id/dashboardFragment">
+  <fragment
+      android:id="@+id/dashboardFragment"
+      android:name="ro.example.lab.dashboard.DashboardFragment"
+      android:label="fragment_dashboard"
+      tools:layout="@layout/fragment_dashboard" />
+  <fragment
+      android:id="@+id/mapFragment"
+      android:name="ro.example.lab.map.MapFragment"
+      android:label="fragment_map"
+      tools:layout="@layout/fragment_map" />
+  <fragment
+      android:id="@+id/offersFragment"
+      android:name="ro.example.lab.offers.OffersFragment"
+      android:label="fragment_offers"
+      tools:layout="@layout/fragment_offers" />
+</navigation>
