@@ -71,8 +71,10 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$androidxRecyclerViewVersion"
 
     // Firebase
-    implementation "com.google.firebase:firebase-auth:$firebaseAuthVersion"
+    implementation "com.google.firebase:firebase-auth:17.0.0"
     implementation "com.firebaseui:firebase-ui-auth:$firebaseUIVersion"
+    implementation "com.google.firebase:firebase-database:17.0.0"
+
 
     // Database: Room
     implementation "androidx.room:room-runtime:$roomVersion"
@@ -107,6 +109,13 @@ dependencies {
 
     // Dates & timestamps
     implementation "com.jakewharton.threetenabp:threetenabp:$threeTenVersion"
+
+    //Google Maps Api
+    //implementation "com.google.android.gms:play-services:12.0.1"
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    // Firebase
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test:runner:$testRunnerVersion"
