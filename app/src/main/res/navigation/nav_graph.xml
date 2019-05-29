@@ -8,15 +8,36 @@
       android:id="@+id/dashboardFragment"
       android:name="ro.example.lab.dashboard.DashboardFragment"
       android:label="fragment_dashboard"
-      tools:layout="@layout/fragment_dashboard" />
+      tools:layout="@layout/fragment_dashboard" >
+    <action
+        android:id="@+id/action_dashboardFragment_to_mapFragment"
+        app:destination="@id/mapFragment" />
+    <action
+        android:id="@+id/action_dashboardFragment_to_offersFragment"
+        app:destination="@id/offersFragment" />
+  </fragment>
   <fragment
       android:id="@+id/mapFragment"
       android:name="ro.example.lab.map.MapFragment"
       android:label="fragment_map"
-      tools:layout="@layout/fragment_map" />
+      tools:layout="@layout/fragment_map" >
+    <action
+        android:id="@+id/action_mapFragment_to_offersFragment"
+        app:destination="@id/offersFragment" />
+    <action
+        android:id="@+id/action_mapFragment_to_dashboardFragment"
+        app:destination="@id/dashboardFragment" />
+  </fragment>
   <fragment
       android:id="@+id/offersFragment"
       android:name="ro.example.lab.offers.OffersFragment"
       android:label="fragment_offers"
-      tools:layout="@layout/fragment_offers" />
+      tools:layout="@layout/fragment_offers" >
+    <action
+        android:id="@+id/action_offersFragment_to_dashboardFragment"
+        app:destination="@id/dashboardFragment" />
+    <action
+        android:id="@+id/action_offersFragment_to_mapFragment"
+        app:destination="@id/mapFragment" />
+  </fragment>
 </navigation>

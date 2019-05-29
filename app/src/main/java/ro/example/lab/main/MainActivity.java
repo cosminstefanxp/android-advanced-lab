@@ -22,10 +22,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+
+        setupBottomNavMenu(navController);
+    }
+
+    public NavController getNavController() {
+        return navController;
     }
 
     private void setupBottomNavMenu(NavController navController) {
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        NavigationUI.setupWithNavController(bottomNav, navController);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        Navigation.setViewNavController(bottomNavigationView, navController);
     }
 }
