@@ -2,6 +2,7 @@ package ro.example.lab;
 
 import android.app.Application;
 
+import com.google.firebase.FirebaseApp;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
 import org.threeten.bp.LocalDateTime;
@@ -21,6 +22,8 @@ public class App extends Application {
         AndroidThreeTen.init(this);
 
         ServiceProvider.initialize(this);
+
+        FirebaseApp.initializeApp(this);
 
         Timber.d("App initialized at %s", LocalDateTime.now());
     }
