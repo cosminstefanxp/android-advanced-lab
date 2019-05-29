@@ -15,6 +15,9 @@
     <action
         android:id="@+id/action_dashboardFragment_to_offersFragment"
         app:destination="@id/offersFragment" />
+    <action
+        android:id="@+id/action_dashboardFragment_to_settingsFragment"
+        app:destination="@id/settingsFragment" />
   </fragment>
   <fragment
       android:id="@+id/mapFragment"
@@ -27,6 +30,9 @@
     <action
         android:id="@+id/action_mapFragment_to_dashboardFragment"
         app:destination="@id/dashboardFragment" />
+    <action
+        android:id="@+id/action_mapFragment_to_settingsFragment"
+        app:destination="@id/settingsFragment" />
   </fragment>
   <fragment
       android:id="@+id/offersFragment"
@@ -38,6 +44,24 @@
         app:destination="@id/dashboardFragment" />
     <action
         android:id="@+id/action_offersFragment_to_mapFragment"
+        app:destination="@id/mapFragment" />
+    <action
+        android:id="@+id/action_offersFragment_to_settingsFragment"
+        app:destination="@id/settingsFragment" />
+  </fragment>
+  <fragment
+      android:id="@+id/settingsFragment"
+      android:name="ro.example.lab.settings.SettingsFragment"
+      android:label="fragment_settings"
+      tools:layout="@layout/fragment_settings" >
+    <action
+        android:id="@+id/action_settingsFragment_to_offersFragment"
+        app:destination="@id/offersFragment" />
+    <action
+        android:id="@+id/action_settingsFragment_to_dashboardFragment"
+        app:destination="@id/dashboardFragment" />
+    <action
+        android:id="@+id/action_settingsFragment_to_mapFragment"
         app:destination="@id/mapFragment" />
   </fragment>
 </navigation>

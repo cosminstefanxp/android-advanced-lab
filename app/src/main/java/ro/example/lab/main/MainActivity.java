@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-
         setupBottomNavMenu(navController);
     }
 
@@ -32,6 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupBottomNavMenu(NavController navController) {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        Navigation.setViewNavController(bottomNavigationView, navController);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
 }
