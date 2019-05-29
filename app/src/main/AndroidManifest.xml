@@ -13,19 +13,21 @@
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
 
+
     <meta-data
         android:name="com.google.android.geo.API_KEY"
         android:value="AIzaSyBqDA5VUh_YxxDIqgAluh8nUpWyW5JCPQ4" />
 
 
-    <activity android:name=".main.MainActivity">
+    <activity android:name=".onboarding.OnboardingActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name=".home.HomeActivity">
+    <activity android:name=".main.MainActivity">
+
     </activity>
 
     <meta-data

@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -9,6 +9,7 @@ android {
         applicationId "ro.example.lab"
         minSdkVersion 19
         targetSdkVersion 28
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -25,6 +26,26 @@ android {
         }
     }
 
+    signingConfigs {
+        debug {
+            storeFile file('app.keystore')
+            storePassword 'android'
+            keyAlias 'debugKey'
+            keyPassword 'k3yPass'
+        }
+
+        release {
+            storeFile file('app.keystore')
+            storePassword project.properties.get("keystorePassword")
+            keyAlias project.properties.get("keystoreAlias")
+            // Fetch keyPassword from properties (set by CI server on CI builds). Normally, you
+            // should just let CI do release builds, but if you need to do a manual build, do it
+            // with `./gradlew assembleRelease -PreleaseKey=<release key>`
+            keyPassword project.properties.get("releaseKey")
+        }
+    }
+
+
     lintOptions {
         checkReleaseBuilds false
 
@@ -32,6 +53,7 @@ android {
         disable 'InvalidPackage', 'ContentDescription'
         disable 'RtlSymmetry', 'RtlHardcoded'
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -49,8 +71,10 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$androidxRecyclerViewVersion"
 
     // Firebase
-    implementation "com.google.firebase:firebase-auth:$firebaseAuthVersion"
+    implementation "com.google.firebase:firebase-auth:17.0.0"
     implementation "com.firebaseui:firebase-ui-auth:$firebaseUIVersion"
+    implementation "com.google.firebase:firebase-database:17.0.0"
+
 
     // Database: Room
     implementation "androidx.room:room-runtime:$roomVersion"
@@ -92,22 +116,18 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:16.0.0'
 
     // Firebase
-    implementation 'com.google.firebase:firebase-core:16.0.9'
-    implementation 'com.google.firebase:firebase-auth:17.0.0'
-    implementation 'com.google.firebase:firebase-database:17.0.0'
-
-    // Material design
-    implementation 'com.google.android.material:material:1.1.0-alpha06'
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test:runner:$testRunnerVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
 
+    implementation "com.facebook.android:facebook-login:5.0.1"
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.1.0-alpha03'
+    implementation 'androidx.navigation:navigation-ui:2.1.0-alpha03'
 }
 
 kapt {
     useBuildCache = true
     correctErrorTypes = true
 }
-
-apply plugin: 'com.google.gms.google-services'

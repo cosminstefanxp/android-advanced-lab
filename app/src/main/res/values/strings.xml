@@ -3,6 +3,14 @@
 
   <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="username">Username</string>
+  <string name="password">Password</string>
+  <string name="reset_password">Reset password</string>
+  <string name="login">Login</string>
+  <string name="dashboard">Dash</string>
+  <string name="offers">Offers</string>
+  <string name="maps">Maps</string>
+  <string name="settings">Settings</string>
   <string name="station_title">Station title</string>
   <string name="open_close">Open/Close</string>
   <string name="estimated_time">Estimated Time</string>

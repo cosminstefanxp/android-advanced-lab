@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import ro.example.lab.R;
 
 /**
@@ -16,17 +19,28 @@ import ro.example.lab.R;
  */
 public class DashboardFragment extends Fragment {
 
+    private DashboardViewModel mViewModel;
 
-    public DashboardFragment() {
-        // Required empty public constructor
-    }
-
+    private RecyclerView mRecyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+
+        // Prepare the ViewModel
+        mViewModel = ViewModelProviders.of(this).get(DashboardViewModel.class);
+
+        mRecyclerView = view.findViewById(R.id.recycler_view);
+
+        DashboardAdapter dashboardAdapter = new DashboardAdapter();
+        mRecyclerView.setAdapter(dashboardAdapter);
+
+        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+
+        return view;
     }
 
 }
